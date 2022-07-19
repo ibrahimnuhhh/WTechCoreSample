@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@model WTechCoreSample.Models.VM.AdminBlogCategoryVM
+
+
+    <form action="/AdminBlogCategory/AddBlogCategory" method="post">
+
+        @Html.ValidationSummary()
+
+        <div class="form-group">
+            <label>Name</label>
+            @Html.TextBoxFor(q => q.Name, new {@class="form-control" })
+        </div>
+
+        <div>
+            <input type="submit" class="btn btn-primary" value="Add" />
+        </div>
+
+    </form>

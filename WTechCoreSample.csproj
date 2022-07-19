@@ -1,0 +1,115 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\AdminActivitiy\**" />
+    <Content Remove="Views\AdminActivitiy\**" />
+    <EmbeddedResource Remove="Views\AdminActivitiy\**" />
+    <None Remove="Views\AdminActivitiy\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Controllers\" />
+    <None Remove="Views\" />
+    <None Remove="Views\Home\" />
+    <None Remove="Models\" />
+    <None Remove="Views\Category\" />
+    <None Remove="Service\" />
+    <None Remove="Views\Member\" />
+    <None Remove="OOPSample\" />
+    <None Remove="Microsoft.EntityFrameworkCore" />
+    <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
+    <None Remove="Microsoft.EntityFrameworkCore.Tools" />
+    <None Remove="Models\ORM\" />
+    <None Remove="Microsoft.EntityFrameworkCore.Design" />
+    <None Remove="Views\WebUser\" />
+    <None Remove="Microsoft.EntityFrameworkCore.Relational" />
+    <None Remove="Views\Role\" />
+    <None Remove="Views\Shared\" />
+    <None Remove="Views\HtmlTemplate\" />
+    <None Remove="Views\HtmlTemplate\css\" />
+    <None Remove="www\" />
+    <None Remove="www\css\" />
+    <None Remove="Views\AdminHome\" />
+    <None Remove="Views\AdminHtmlTemplate\" />
+    <None Remove="Views\Shared\Partial\" />
+    <None Remove="Views\Shared\Partial\Admin\" />
+    <None Remove="Models\VM\" />
+    <None Remove="Views\AdminBlogCategory\" />
+    <None Remove="Views\AdminWebUser\" />
+    <None Remove="Views\AdminComment\" />
+    <None Remove="Views\AdminMenu\" />
+    <None Remove="Views\AdminContact\" />
+    <None Remove="Models\Helper\" />
+    <None Remove="MailKit" />
+    <None Remove="MimeKit" />
+    <None Remove="Views\AdminLogin\" />
+    <None Remove="Views\AdminProfile\" />
+    <None Remove="Views\AdminUser\" />
+    <None Remove="Views\AdminFood\" />
+    <None Remove="Views\AdminHome\Partial\" />
+    <None Remove="Views\AdminActivitiy\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Views\" />
+    <Folder Include="Views\Home\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\Category\" />
+    <Folder Include="Service\" />
+    <Folder Include="Views\Member\" />
+    <Folder Include="OOPSample\" />
+    <Folder Include="Models\ORM\" />
+    <Folder Include="Views\WebUser\" />
+    <Folder Include="Views\Role\" />
+    <Folder Include="Views\Shared\" />
+    <Folder Include="Views\HtmlTemplate\" />
+    <Folder Include="Views\HtmlTemplate\css\" />
+    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\admin\" />
+    <Folder Include="wwwroot\assets\" />
+    <Folder Include="wwwroot\css\" />
+    <Folder Include="wwwroot\js\" />
+    <Folder Include="wwwroot\site\" />
+    <Folder Include="Views\AdminHome\" />
+    <Folder Include="Views\AdminHtmlTemplate\" />
+    <Folder Include="Views\Shared\Partial\" />
+    <Folder Include="Views\Shared\Partial\Admin\" />
+    <Folder Include="Models\VM\" />
+    <Folder Include="Views\AdminBlogCategory\" />
+    <Folder Include="Views\AdminWebUser\" />
+    <Folder Include="Views\AdminComment\" />
+    <Folder Include="Views\AdminMenu\" />
+    <Folder Include="Views\AdminContact\" />
+    <Folder Include="Models\Helper\" />
+    <Folder Include="Views\AdminLogin\" />
+    <Folder Include="Views\AdminProfile\" />
+    <Folder Include="Views\AdminUser\" />
+    <Folder Include="Views\AdminFood\" />
+    <Folder Include="Views\AdminHome\Partial\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.0" />
+    <PackageReference Include="MailKit" Version="3.0.0" />
+    <PackageReference Include="MimeKit" Version="3.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\site\" />
+    <Content Remove="wwwroot\assets\" />
+    <Content Remove="wwwroot\css\" />
+    <Content Remove="wwwroot\js\" />
+  </ItemGroup>
+</Project>

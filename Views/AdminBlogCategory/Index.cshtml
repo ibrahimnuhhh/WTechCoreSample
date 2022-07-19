@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@model List<WTechCoreSample.Models.VM.AdminBlogCategoryVM>
+
+
+<table class="table" style="background-color:white">
+    <tr>
+        <td>Name</td>
+        <td>Delete</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td><a href="/AdminBlogCategory/Delete/@item.Id" class="btn btn-danger">Delete</a></td>
+        </tr>
+    }
+</table>

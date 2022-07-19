@@ -1,0 +1,33 @@
+﻿@model List<WTechCoreSample.Models.ORM.WebUser>
+
+
+
+<table class="table" style="background-color:white">
+
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Surname</td>
+        <td>City</td>
+        <td>Country</td>
+        <td>Detail</td>
+ 
+
+
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.SurName</td>
+            <td>@item.City</td>
+            <td>@item.Country</td>
+            <td><a href="/Webuser/Detail/@item.Id">Go to detail</a></td>
+
+        </tr>
+    }
+
+</table> 

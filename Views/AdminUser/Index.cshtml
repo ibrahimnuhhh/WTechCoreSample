@@ -1,0 +1,69 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<table class="table" style="background-color:white">
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Surname</td>
+        <td>EMail</td>
+    </tr>
+
+
+</table>
+
+
+
+<script>
+
+    @* fetch ile de çekilebilir *@
+    @*fetch("/AdminUser/GetAdminUsers")
+        .then((res) => res.json())
+        .then((data) => {
+            data.forEach((item) => {
+
+                console.log(item)
+            })
+        })*@
+
+
+    //Fetch yerine JQuery de getJSON kullanılabilir.
+    //Callback function
+
+    @*$.getJSON("/AdminUser/GetAdminUsers", function (data) {
+
+        data.forEach((item) => {
+
+            console.log(item)
+        })
+    })*@
+
+
+    $.ajax({
+
+        url: '/AdminUser/GetAdminUsers',
+        type: 'GET',
+        success: function (data) {
+            data.forEach((item) => {
+
+  
+                $("table").append(`
+                <tr>
+                    <td>`+ item.id + `</td>
+                    <td>`+ item.name + `</td>
+                    <td>`+ item.surname + `</td>
+                    <td>`+ item.eMail + `</td>
+                </tr>
+                 `)
+
+            })
+        }
+
+    })
+
+
+
+</script>

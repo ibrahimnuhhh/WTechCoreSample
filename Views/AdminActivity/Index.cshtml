@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@model List<WTechCoreSample.Models.ORM.AdminActivity>
+
+
+
+<table class="table">
+    <tr>
+        <td>EMail</td>
+        <td>Title</td>
+        <td>Content</td>
+        <td>Category</td>
+        <td>Date</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.AdminUser?.EMail</td>
+            <td>@item.Title</td>
+            <td>@item.Content</td>
+            <td>@item.ActivityCategory</td>
+            <td>@item.AddDate.ToString("dd MM yyyy hh:mm")</td>
+        </tr>
+    }
+
+</table>

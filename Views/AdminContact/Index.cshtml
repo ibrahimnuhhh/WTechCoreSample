@@ -1,0 +1,80 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@model List<WTechCoreSample.Models.ORM.Contact>
+
+<table class="table">
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>EMail</td>
+        <td>Delete</td>
+        <td>Detail</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.EMail</td>
+            <td><a href="/AdminContact/Delete/@item.Id">Delete</a></td>
+            <td><button onclick="getDetail(@item.Id)" class="btn btn-primary" data-toggle="modal" data-target="#contactDetail">Detail</button></td>
+        </tr>
+    }
+</table>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="contactDetail" tabindex="-1" role="dialog" aria-labelledby="contactDetail" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Message Detail</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div style="display:flex; justify-content:space-between">
+                    <div id="messageDate">
+
+                    </div>
+                    <div id="messageEMail">
+
+                    </div>
+                </div>
+             
+                <div id="contactMessage">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    function getDetail(id) {
+
+        fetch("/AdminContact/Detail/" + id)
+            .then(res => res.json())
+            .then((data) => {
+              
+                $("#messageDate").html(data.addDate)
+                $("#messageEMail").html(data.eMail)
+                $("#contactMessage").html(data.message)
+
+            })
+
+    }
+
+</script>

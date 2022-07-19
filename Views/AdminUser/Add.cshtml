@@ -1,0 +1,58 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="form-group">
+    <label>Name</label>
+    <input class="form-control" type="text" id="name"/>
+</div>
+
+<div class="form-group">
+    <label>Surname</label>
+    <input class="form-control" type="text" id="surname" />
+</div>
+
+<div class="form-group">
+    <label>EMail</label>
+    <input class="form-control" type="text" id="email" />
+</div>
+
+<div class="form-group">
+    <label>Password</label>
+    <input class="form-control" type="password" id="password" />
+</div>
+
+<div class="form-group">
+   <button onclick="addAdminUser()">Add</button>
+</div>
+
+
+<script>
+
+    function addAdminUser() {
+
+        var adminUser = new Object();
+        adminUser.Name = $("#name").val();
+        adminUser.Surname = $("#surname").val();
+        adminUser.EMail = $("#email").val();
+        adminUser.Password = $("#password").val();
+
+        console.log(adminUser);
+
+        $.ajax({
+            url:'/AdminUser/AddAdminUser',
+            type: 'POST',
+            data: adminUser,
+            success: function () {
+                alert("Admin User Ekleme başarılı");
+
+            }
+
+        })
+
+
+    }
+
+</script>

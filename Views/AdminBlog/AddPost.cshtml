@@ -1,0 +1,42 @@
+﻿
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@model List<WTechCoreSample.Models.ORM.BlogCategory>
+
+
+<div>
+    <h1>Post Ekleme Ekranı</h1>
+
+    <form action="/AdminBlog/AddPost" method="post">
+
+        <div class="form-group">
+            <label>Blog Category:</label>
+            <select name="BlogCategoryId" class="form-control">
+                @foreach (var item in Model)
+                {
+                    <option value="@item.Id">@item.Name</option>
+                }
+
+            </select>
+            @*<input type="text" name="BlogCategoryId" class="form-control"  />*@
+        </div>
+
+        <div class="form-group">
+            <label>Title:</label>
+            <input type="text" name="Title"  class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Content:</label>
+            <textarea name="Content" id="content" class="form-control ckeditor" ></textarea>
+        </div>
+
+        <div class="form-group">
+            <input class="btn btn-primary" type="submit" value="Add" />
+        </div>
+
+    </form>
+</div>
